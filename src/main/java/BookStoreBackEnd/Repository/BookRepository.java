@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface BookRepository extends JpaRepository<BookEntity, Integer >{
     List<BookEntity>findAll();
 
-    List<BookEntity>findBy();
-
     BookEntity findByBookid(Integer id);
 
     void deleteByBookid(int id);

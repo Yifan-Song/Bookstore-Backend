@@ -966,124 +966,138 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="243" parent="234" name="PRIMARY">
+    <column id="243" parent="234" name="stock">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="244" parent="234" name="sales_volume">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="245" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>bookid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="244" parent="235" name="userid">
+    <column id="246" parent="235" name="userid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="235" name="cacheid">
+    <column id="247" parent="235" name="cacheid">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="235" name="bookpath">
+    <column id="248" parent="235" name="bookpath">
       <Position>3</Position>
       <DataType>varchar(300)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="235" name="status">
+    <column id="249" parent="235" name="status">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="235" name="bookname">
+    <column id="250" parent="235" name="bookname">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="235" name="price">
+    <column id="251" parent="235" name="price">
       <Position>6</Position>
       <DataType>decimal(5,2 digit)|0s</DataType>
       <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="235" name="author">
+    <column id="252" parent="235" name="author">
       <Position>7</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="235" name="year">
+    <column id="253" parent="235" name="year">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="235" name="bookid">
+    <column id="254" parent="235" name="bookid">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="235" name="number">
+    <column id="255" parent="235" name="number">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="254" parent="235" name="cartitem_cartid_uindex">
+    <index id="256" parent="235" name="cartitem_cartid_uindex">
       <ColNames>cacheid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="255" parent="235" name="PRIMARY">
+    <key id="257" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>cacheid</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="256" parent="235" name="cartitem_cartid_uindex">
+    <key id="258" parent="235" name="cartitem_cartid_uindex">
       <ColNames>cacheid</ColNames>
       <UnderlyingIndexName>cartitem_cartid_uindex</UnderlyingIndexName>
     </key>
-    <column id="257" parent="236" name="username">
+    <column id="259" parent="236" name="username">
       <Position>1</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="236" name="userid">
+    <column id="260" parent="236" name="userid">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="236" name="phone">
+    <column id="261" parent="236" name="phone">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="236" name="email">
+    <column id="262" parent="236" name="email">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="236" name="gender">
+    <column id="263" parent="236" name="gender">
       <Position>5</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="236" name="address">
+    <column id="264" parent="236" name="address">
       <Position>6</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="236" name="password">
+    <column id="265" parent="236" name="password">
       <Position>7</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="236" name="role">
+    <column id="266" parent="236" name="role">
       <Position>8</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="265" parent="236" name="PRIMARY">
+    <key id="267" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>

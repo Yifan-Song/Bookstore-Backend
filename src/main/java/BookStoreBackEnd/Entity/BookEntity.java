@@ -12,6 +12,8 @@ public class BookEntity {
     private String author;
     private Integer year;
     private int bookid;
+    private int stock;
+    private int salesVolume;
 
     @Basic
     @Column(name = "bookpath")
@@ -73,6 +75,26 @@ public class BookEntity {
         this.bookid = bookid;
     }
 
+    @Basic
+    @Column(name = "stock")
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    @Basic
+    @Column(name = "sales_volume")
+    public int getSalesVolume() {
+        return salesVolume;
+    }
+
+    public void setSalesVolume(int salesVolume) {
+        this.salesVolume = salesVolume;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,6 +103,8 @@ public class BookEntity {
         BookEntity that = (BookEntity) o;
 
         if (bookid != that.bookid) return false;
+        if (stock != that.stock) return false;
+        if (salesVolume != that.salesVolume) return false;
         if (bookpath != null ? !bookpath.equals(that.bookpath) : that.bookpath != null) return false;
         if (bookname != null ? !bookname.equals(that.bookname) : that.bookname != null) return false;
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
@@ -98,6 +122,8 @@ public class BookEntity {
         result = 31 * result + (author != null ? author.hashCode() : 0);
         result = 31 * result + (year != null ? year.hashCode() : 0);
         result = 31 * result + bookid;
+        result = 31 * result + stock;
+        result = 31 * result + salesVolume;
         return result;
     }
 }

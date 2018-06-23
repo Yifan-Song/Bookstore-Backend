@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import BookStoreBackEnd.Entity.BookcacheEntity;
 import BookStoreBackEnd.Service.CacheService;
+import BookStoreBackEnd.Repository.BookRepository;
 
 
 @RestController
@@ -18,6 +19,7 @@ import BookStoreBackEnd.Service.CacheService;
 public class CacheController {
     @Autowired
     private CacheService cacheService;
+    private BookRepository bookRepository;
 
     @PostMapping(value="/cart/get")
     @ResponseBody

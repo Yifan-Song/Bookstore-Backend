@@ -9,49 +9,16 @@ import BookStoreBackEnd.Repository.BookRepository;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Service
-public class BookService {
-    @Autowired
-    private BookRepository bookRepository;
+public interface BookService {
 
-    public List<BookEntity> findAll(){
-        return bookRepository.findAll();
-    }
+    public List<BookEntity> findAll();
 
-    public BookEntity findByBookid(int id){
-        return bookRepository.findByBookid(id);
-    }
+    public BookEntity findByBookid(int id);
 
-    public JSONObject addBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid)
-    {
-        BookEntity newBook = new BookEntity();
-        newBook.setBookpath(bookpath);
-        newBook.setBookname(bookname);
-        newBook.setBookid(bookid);
-        newBook.setPrice(price);
-        newBook.setAuthor(author);
-        newBook.setYear(year);
-        return JSONObject.fromObject(bookRepository.save(newBook));
-    }
+    public JSONObject addBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid);
 
-    public void deleteBookByBookid(int id)
-    {
-        System.out.println("Deleting");
-        System.out.println(id);
-        bookRepository.deleteByBookid(id);
-    }
+    public void deleteBookByBookid(int id);
 
-    public void deleteBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid)
-    {
-        BookEntity newBook = new BookEntity();
-        newBook.setBookpath(bookpath);
-        newBook.setBookname(bookname);
-        newBook.setBookid(bookid);
-        newBook.setPrice(price);
-        newBook.setAuthor(author);
-        newBook.setYear(year);
-        System.out.println(newBook.toString());
-        bookRepository.delete(newBook);
-    }
+    public void deleteBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid);
 
 }
