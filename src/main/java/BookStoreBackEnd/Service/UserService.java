@@ -18,5 +18,5 @@ public interface UserService {
 
     public UserEntity findByUsername(String name);
 
-    public JSONObject addUser(String username, int phone, String email, String gender, String address, String password);
+    public JSONObject addUser(String username, String phone, String email, String gender, String address, String password);
 }

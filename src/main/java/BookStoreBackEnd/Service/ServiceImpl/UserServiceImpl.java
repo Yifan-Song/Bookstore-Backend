@@ -27,8 +27,9 @@ public class UserServiceImpl implements UserService {
         return UserRepository.findByUsername(name);
     }
 
-    public JSONObject addUser(String username, int phone, String email, String gender, String address, String password)
+    public JSONObject addUser(String username, String phone, String email, String gender, String address, String password)
     {
+        System.out.println(username);
         UserEntity newUser = new UserEntity();
         newUser.setAddress(address);
         newUser.setEmail(email);

@@ -59,6 +59,7 @@ public class CacheController {
     @PostMapping(value="/orders/add")
     @ResponseBody
     public JSONObject addOrderItem(@RequestParam("userid")Integer userid, @RequestParam("bookpath")String bookpath, @RequestParam("bookname")String bookname, @RequestParam("price")BigDecimal price, @RequestParam("author")String author, @RequestParam("year")Integer year, @RequestParam("bookid")Integer bookid, @RequestParam("number")Integer number, @RequestParam("cacheid")Integer cacheid){
+        System.out.println("order in");
         return JSONObject.fromObject(cacheService.addOrderitem(bookpath, bookname, price, author, year, bookid, userid, number, cacheid));
     }
 }

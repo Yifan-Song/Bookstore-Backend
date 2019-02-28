@@ -23,7 +23,7 @@ public class BookServiceImpl implements BookService{
         return bookRepository.findByBookid(id);
     }
 
-    public JSONObject addBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid)
+    public JSONObject addBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid, String book_abstract, String author_abstract, String isbn)
     {
         BookEntity newBook = new BookEntity();
         newBook.setBookpath(bookpath);
@@ -32,6 +32,9 @@ public class BookServiceImpl implements BookService{
         newBook.setPrice(price);
         newBook.setAuthor(author);
         newBook.setYear(year);
+        newBook.setIsbn(isbn);
+        newBook.setBookAbstract(book_abstract);
+        newBook.setAuthorAbstract(author_abstract);
         return JSONObject.fromObject(bookRepository.save(newBook));
     }
 
@@ -42,7 +45,7 @@ public class BookServiceImpl implements BookService{
         bookRepository.deleteByBookid(id);
     }
 
-    public void deleteBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid)
+    public void deleteBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid, String book_abstract, String author_abstract, String isbn)
     {
         BookEntity newBook = new BookEntity();
         newBook.setBookpath(bookpath);
@@ -51,7 +54,9 @@ public class BookServiceImpl implements BookService{
         newBook.setPrice(price);
         newBook.setAuthor(author);
         newBook.setYear(year);
-        System.out.println(newBook.toString());
+        newBook.setIsbn(isbn);
+        newBook.setBookAbstract(book_abstract);
+        newBook.setAuthorAbstract(author_abstract);
         bookRepository.delete(newBook);
     }
 

@@ -15,10 +15,10 @@ public interface BookService {
 
     public BookEntity findByBookid(int id);
 
-    public JSONObject addBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid);
+    public JSONObject addBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid, String book_abstract, String author_abstract, String isbn);
 
     public void deleteBookByBookid(int id);
 
-    public void deleteBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid);
+    public void deleteBook(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid, String book_abstract, String author_abstract, String isbn);
 
 }

@@ -20,8 +20,9 @@ public class UserController {
 
     @PostMapping(value="/users/register")
     @ResponseBody
-    public JSONObject addUser(@RequestParam("username")String username, @RequestParam("email")String email, @RequestParam("phone")int phone, @RequestParam("password")String password, @RequestParam("gender")String gender, @RequestParam("address")String address)
+    public JSONObject addUser(@RequestParam("username")String username, @RequestParam("email")String email, @RequestParam("phone")String phone, @RequestParam("password")String password, @RequestParam("gender")String gender, @RequestParam("address")String address)
     {
+        System.out.println(username);
         return JSONObject.fromObject(userService.addUser(username, phone, email, gender, address, password));
     }
 

@@ -28,6 +28,7 @@ public class BookcacheEntity {
     }
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "cacheid")
     public int getCacheid() {
         return cacheid;
