@@ -10,11 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import BookStoreBackEnd.Entity.BookEntity;
 import BookStoreBackEnd.Service.BookService;
-
+import BookStoreBackEnd.Service.RmiService;
+import org.springframework.context.ApplicationContext;
 
 @RestController
 @RequestMapping(value="/api")
 public class BookController {
+    @Autowired
+    ApplicationContext applicationContext;
 
     @Autowired
     private BookService bookService;
@@ -49,4 +52,17 @@ public class BookController {
         int bookid = 0;
         return JSONObject.fromObject(bookService.addBook(bookPath, bookname, price, author, year, bookid, book_abstract, author_abstract, isbn));
     }
+
+    @GetMapping("/rmiTest")
+    public String rmiTest(){
+        try {
+            RmiService service = applicationContext.getBean(RmiService.class);
+            return service.rmiDemoService("test");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return "ERROR";
+        }
+    }
+
 }

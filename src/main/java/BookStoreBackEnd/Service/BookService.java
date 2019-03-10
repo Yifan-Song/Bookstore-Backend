@@ -2,6 +2,7 @@ package BookStoreBackEnd.Service;
 
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import BookStoreBackEnd.Entity.BookEntity;
 import BookStoreBackEnd.Repository.BookRepository;
@@ -9,6 +10,7 @@ import BookStoreBackEnd.Repository.BookRepository;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Service
 public interface BookService {
 
     public List<BookEntity> findAll();
