@@ -2,6 +2,7 @@ package BookStoreBackEnd.Service.ServiceImpl;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -16,6 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import java.math.BigDecimal;
 import java.util.List;
+import java.io.IOException;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 @Service
 @Scope("prototype")
@@ -24,8 +28,22 @@ import java.util.List;
 public class CacheServiceImpl implements CacheService {
     @Autowired
     private CacheRepository cacheRepository;
+
     @Autowired
     private BookRepository bookRepository;
+
+    public String decoder(String msg, int id){
+        String newEncoded = "";
+        char newChar;
+
+        for(int i = 0; i < msg.length(); i++){
+            int charNum = msg.charAt(i);
+            newChar =  (char) (charNum - id);
+            newEncoded += newChar;
+        }
+        String decoded =  new String(Base64.decodeBase64(newEncoded.getBytes()));
+        return decoded;
+    }
 
     public List<BookcacheEntity> GetCartByUserid(int userid)
     {
@@ -143,7 +161,12 @@ public class CacheServiceImpl implements CacheService {
     }
 
     @Modifying
-    public String payOrder(String time){
+    public String payOrder(String time, String price, int userid){
+        String priceStr = decoder(price, userid);
+        Float truePrice = Float.parseFloat(priceStr);
+        if(truePrice <= 0){
+            return "{\"OrderStatus\" : \"Failed\"}";
+        }
         for(BookcacheEntity cache : orderToPay){
             BookEntity orderBook = bookRepository.findByBookid(cache.getBookid());
             int salesVolume = orderBook.getSalesVolume();
@@ -169,6 +192,23 @@ public class CacheServiceImpl implements CacheService {
         newCache.setAuthor(author);
         newCache.setYear(year);
         cacheRepository.delete(newCache);
+    }
+
+    public static String Encode(String src) {
+        BASE64Encoder encoder = new BASE64Encoder();
+        String encode = encoder.encode(src.getBytes());
+        return encode;
+    }
+
+    public static String Decode(String src) {
+        try {
+            BASE64Decoder decoder = new BASE64Decoder();
+            String decode = new String(decoder.decodeBuffer(src));
+            return decode;
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Failed to decode";
     }
 
 }

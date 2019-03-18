@@ -16,8 +16,8 @@ import BookStoreBackEnd.Entity.BookcacheEntity;
 import BookStoreBackEnd.Service.CacheService;
 import BookStoreBackEnd.Repository.BookRepository;
 
-import javax.validation.constraints.Null;
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping(value="/api")
@@ -92,8 +92,11 @@ public class CacheController {
     @ResponseBody
     @Scope("prototype")
     //@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
-    public JSONObject payOrder(@RequestParam("time")String time){
+    public JSONObject payOrder(@RequestParam("price")String price, @RequestParam("time")String time, HttpServletRequest request){
+        HttpSession session=request.getSession();//这就是session的创建
+        int userid = (int)session.getAttribute("userid");
         System.out.println("pay order\n");
-        return JSONObject.fromObject(cacheService.payOrder(time));
+        return JSONObject.fromObject(cacheService.payOrder(time, price, userid));
     }
+
 }

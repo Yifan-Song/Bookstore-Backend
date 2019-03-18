@@ -3,7 +3,9 @@ package BookStoreBackEnd.Controller;
 import net.sf.json.JSONArray;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,9 @@ import BookStoreBackEnd.Entity.BookEntity;
 import BookStoreBackEnd.Service.BookService;
 import BookStoreBackEnd.Service.RmiService;
 import org.springframework.context.ApplicationContext;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping(value="/api")

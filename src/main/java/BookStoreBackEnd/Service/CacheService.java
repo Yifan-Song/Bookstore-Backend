@@ -38,7 +38,7 @@ public interface CacheService {
 
     public List<BookcacheEntity> lockOrder(String time);
 
-    public String payOrder(String time);
+    public String payOrder(String time, String price, int userid);
 
     public void deleteCartitem(String bookpath, String bookname, BigDecimal price, String author, int year, int bookid, int userid, int number, int cacheid);
 

@@ -40,7 +40,6 @@ public class RealUserDetailsService implements UserDetailsService { // custom Us
             grantedAuthority.add(new SimpleGrantedAuthority("ROLE_USER"));
         }
 
-
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
         authorities.add(new SimpleGrantedAuthority(user.getRole()));

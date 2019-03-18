@@ -35,6 +35,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -75,6 +76,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(new AuthenticationSuccessHandler() {
                     @Override
                     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
+
+                        HttpSession session=httpServletRequest.getSession(true);//这就是session的创建
+                        session.setAttribute("userid",JSONObject.fromObject(userService.findByUsername(authentication.getName())).get("userid"));//给session添加属性属性name： username,属性 value：TOM
+
+
                         httpServletResponse.setContentType("application/json;charset=utf-8");
                         String username = authentication.getName();
 

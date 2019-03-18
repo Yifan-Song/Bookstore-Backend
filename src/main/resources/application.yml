@@ -1,4 +1,9 @@
 spring:
+  server:
+    connection-timout:
+    max-http-header-size: "8192"
+    session:
+      time-out: 2000
 #数据库配置
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

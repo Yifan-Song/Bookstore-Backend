@@ -12,6 +12,9 @@ import org.slf4j.LoggerFactory;
 import BookStoreBackEnd.Entity.UserEntity;
 import BookStoreBackEnd.Service.UserService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @RestController
 @RequestMapping(value="/api")
 public class UserController {
@@ -28,8 +31,10 @@ public class UserController {
 
     @PostMapping(value="/users/get")
     @ResponseBody
-    public JSONObject getUser(@RequestParam("userid")int userid)
+    public JSONObject getUser(@RequestParam("userid")int userid, HttpServletRequest request)
     {
+        HttpSession session=request.getSession();
+        System.out.println(session.getAttribute("username"));
         return JSONObject.fromObject(userService.findByUserid(userid));
     }
 }
