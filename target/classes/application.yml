@@ -24,3 +24,22 @@ spring:
     mongodb:
       database: bookstore
       uri: mongodb://127.0.0.1:27017
+    neo4j:
+      uri: bolt://localhost:7687
+      username: neo4j
+      password: 466204092
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: password
+    timeout: 0
+
+kafka:
+      producer:
+        servers: 127.0.0.1:9092
+        retries: 0
+        linger: 1
+        batch:
+          size: 4096
+        buffer:
+          memory: 40960

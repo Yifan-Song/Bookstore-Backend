@@ -10,19 +10,19 @@
     <!-- <property name="connection.password"/> -->
     <mapping class="Entity.BooktableEntity"/>
     <mapping resource="Entity/BooktableEntity.hbm.xml"/>
-      <mapping class="BookStoreBackEnd.Entity.BooktableEntity"/>
-      <mapping resource="BookStoreBackEnd/Entity/BooktableEntity.hbm.xml"/>
-      <mapping class="BookStoreBackEnd.Entity.BookImageEntity"/>
-      <mapping resource="BookStoreBackEnd/Entity/BookImageEntity.hbm.xml"/>
-      <mapping class="BookStoreBackEnd.Entity.BooklistEntity"/>
-      <mapping resource="BookStoreBackEnd/Entity/BooklistEntity.hbm.xml"/>
-      <mapping class="BookStoreBackEnd.Entity.UserEntity"/>
-      <mapping resource="BookStoreBackEnd/Entity/UserEntity.hbm.xml"/>
-      <mapping resource="BookStoreBackEnd/Entity/BookEntity.hbm.xml"/>
-      <mapping class="BookStoreBackEnd.Entity.BookEntity"/>
-      <mapping class="BookStoreBackEnd.Entity.UserEntity"/>
-      <mapping resource="BookStoreBackEnd/Entity/BookcacheEntity.hbm.xml"/>
-      <mapping class="BookStoreBackEnd.Entity.BookcacheEntity"/>
+      <mapping class="bookstorebackend.Entity.BooktableEntity"/>
+      <mapping resource="bookstorebackend/Entity/BooktableEntity.hbm.xml"/>
+      <mapping class="bookstorebackend.Entity.BookImageEntity"/>
+      <mapping resource="bookstorebackend/Entity/BookImageEntity.hbm.xml"/>
+      <mapping class="bookstorebackend.Entity.BooklistEntity"/>
+      <mapping resource="bookstorebackend/Entity/BooklistEntity.hbm.xml"/>
+      <mapping class="bookstorebackend.Entity.UserEntity"/>
+      <mapping resource="bookstorebackend/Entity/UserEntity.hbm.xml"/>
+      <mapping resource="bookstorebackend/Entity/BookEntity.hbm.xml"/>
+      <mapping class="bookstorebackend.Entity.BookEntity"/>
+      <mapping class="bookstorebackend.Entity.UserEntity"/>
+      <mapping resource="bookstorebackend/Entity/BookcacheEntity.hbm.xml"/>
+      <mapping class="bookstorebackend.Entity.BookcacheEntity"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
